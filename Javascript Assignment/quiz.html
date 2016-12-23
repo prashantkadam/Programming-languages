@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        button {
+            width: 150px;
+            padding: 5px;
+        }
+        
+        body {
+            background-color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <p align="center"><b>Click the button to demonstrate the prompt box.</b></p>
+    <table align="center" cellspacing="5" border="0">
+        <tr>
+            <td>
+                <button onclick="gamingOperation.integerAddition()">Integer Addition</button>
+            </td>
+            <td>
+                <button onclick="gamingOperation.integerSubtraction()">Integer Subtraction</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="gamingOperation.floatAddition()">Float Addition</button>
+            </td>
+            <td>
+                <button onclick="gamingOperation.floatSubtraction()">Float Subtraction</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="gamingOperation.ComplexAddition()">Complex Addition</button>
+            </td>
+            <td>
+                <button onclick="gamingOperation.ComplexSubtraction()">Complex Subtraction</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="gamingOperation.ExtraAddition()">Extra Addition</button>
+            </td>
+            <td>
+                <button onclick="gamingOperation.ExtraSubtraction()">Extra Subtraction</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="gamingOperation.CheckScore()">Check Score</button>
+            </td>
+            <td>
+                <button onclick="gamingOperation.reset()">Reset Score</button>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <script type="text/javascript">
+        var gameResult = {
+            total: 0,
+            totalCorrect: 0,
+            totalWrong: 0
+        };
+        var gamingOperation = {
+            CheckScore: function() {
+                alert("Total: " + gameResult.total + "\nCorrect: " + gameResult.totalCorrect + "\nWrong: " + gameResult.totalWrong);
+            },
+            reset: function() {
+                gameResult.total = 0;
+                gameResult.totalCorrect = 0;
+                gameResult.totalWrong = 0;
+            },
+            integerAddition: function() {
+                var random1 = Math.floor((Math.random() * 10));
+                var random2 = Math.floor((Math.random() * 10));
+                var correctAns = random1 + random2;
+                var result = prompt(random1 + "+" + random2 + "=");
+                if (result != null && result != "") {
+                    gameResult.total++;
+                    if (correctAns == result.trim()) {
+                        gameResult.totalCorrect++;
+                        alert("Correct Answer \nTotal: " + gameResult.total + "\nCorrect: " + gameResult.totalCorrect + "\nWrong: " + gameResult.totalWrong);
+                    } else {
+                        gameResult.totalWrong++;
+                        alert("Wrong Answer \nThe Correct Answer is " + correctAns + "\nTotal: " + gameResult.total + "\nCorrect: " + gameResult.totalCorrect + "\nWrong: " + gameResult.totalWrong);
+                    }
+                }
+            },
+            integerSubtraction: function() {
+                var random1 = Math.floor((Math.random() * 10));
+                var random2 = Math.floor((Math.random() * 10));
+                var correctAns = random1 - random2;
+                var result = prompt(random1 + "-" + random2 + "=");
+                if (result != null && result != "") {
+                    gameResult.total++;
+                    if (correctAns == result.trim()) {
+                        gameResult.totalCorrect++;
+                        alert("Correct Answer \nTotal: " + gameResult.total + "\nCorrect: " + gameResult.totalCorrect + "\nWrong: " + gameResult.totalWrong);
+                    } else {
+                        gameResult.totalWrong++;
+                        alert("Wrong Answer \nThe Correct Answer is " + correctAns + "\nTotal: " + gameResult.total + "\nCorrect: " + gameResult.totalCorrect + "\nWrong: " + gameResult.totalWrong);
+                    }
+                }
+            },
+            floatAddition: function() {
+                var random1 = Math.floor((Math.random() * 10)) + "." + Math.floor((Math.random() * 10));
+                var random2 = Math.floor((Math.random() * 10)) + "." + Math.floor((Math.random() * 10));
+                var correctAns = ((Number(random1) + Number(random2)).toFixed(1)) / 1;
+                var result = prompt(random1 + "+" + random2 + "=");
+                if (result != null && result != "") {
+                    gameResult.total++;
+                    if (correctAns == result.trim()) {
+                        gameResult.totalCorrect++;
+                        alert("Correct Answer \nTotal: " + gameResult.total + "\nCorrect: " + gameResult.totalCorrect + "\nWrong: " + gameResult.totalWrong);
+                    } else {
+                        gameResult.totalWrong++;
+                        alert("Wrong Answer \nThe Correct Answer is " + correctAns + "\nTotal: " + gameResult.total + "\nCorrect: " + gameResult.totalCorrect + "\nWrong: " + gameResult.totalWrong);
+                    }
+                }
+            },
+            floatSubtraction: function() {
+                var random1 = Math.floor((Math.random() * 10)) + "." + Math.floor((Math.random() * 10));
+                var random2 = Math.floor((Math.random() * 10)) + "." + Math.floor((Math.random() * 10));
+                var correctAns = ((Number(random1) - Number(random2)).toFixed(1)) / 1;
+                var result = prompt(random1 + "-" + random2 + "=");
+                if (result != null && result != "") {
+                    gameResult.total++;
+                    if (correctAns == result.trim()) {
+                        gameResult.totalCorrect++;
+                        alert("Correct Answer \nTotal: " + gameResult.total + "\nCorrect: " + gameResult.totalCorrect + "\nWrong: " + gameResult.totalWrong);
+                    } else {
+                        gameResult.totalWrong++;
+                        alert("Wrong Answer \nThe Correct Answer is " + correctAns + "\nTotal: " + gameResult.total + "\nCorrect: " + gameResult.totalCorrect + "\nWrong: " + gameResult.totalWrong);
+                    }
+
+                }
+            },
+            ComplexAddition: function() {
+                var random1_real = Math.floor((Math.random() * 10));
+                var random1_img = Math.floor((Math.random() * 10));
+                var random2_real = Math.floor((Math.random() * 10));
+                var random2_img = Math.floor((Math.random() * 10));
+                var correctAns_real = random1_real + random2_real;
+                var correctAns_img = random1_img + random2_img;
+                var correctAns = correctAns_real + "+" + correctAns_img + "i";
+                var result = prompt("(" + random1_real + "+" + random1_img + "i" + ")" + "+" + "(" + random2_real + "+" + random2_img + "i" + ")" + "=");
+                if (result != null && result != "") {
+                    gameResult.total++;
+                    if (correctAns == result.trim()) {
+                        gameResult.totalCorrect++;
+                        alert("Correct Answer \nTotal: " + gameResult.total + "\nCorrect: " + gameResult.totalCorrect + "\nWrong: " + gameResult.totalWrong);
+                    } else {
+                        gameResult.totalWrong++;
+                        alert("Wrong Answer \nThe Correct Answer is " + correctAns + "\nTotal: " + gameResult.total + "\nCorrect: " + gameResult.totalCorrect + "\nWrong: " + gameResult.totalWrong);
+                    }
+
+                }
+            },
+
+            ComplexSubtraction: function() {
+                var random1_real = Math.floor((Math.random() * 10));
+                var random1_img = Math.floor((Math.random() * 10));
+                var random2_real = Math.floor((Math.random() * 10));
+                var random2_img = Math.floor((Math.random() * 10));
+                var correctAns_real = random1_real - random2_real;
+                var correctAns_img = random1_img - random2_img;
+                var correctAns = "";
+                if (correctAns_img < 0)
+                    correctAns = correctAns_real + "-" + (correctAns_img * -1) + "i";
+                else
+                    correctAns = correctAns_real + "+" + correctAns_img + "i";
+                var result = prompt("(" + random1_real + "+" + random1_img + "i" + ")" + "-" + "(" + random2_real + "+" + random2_img + "i" + ")" + "=");
+                if (result != null && result != "") {
+                    result = result.replace(/\+\-/g, '-');
+                    gameResult.total++;
+                    if (correctAns == result.trim()) {
+                        gameResult.totalCorrect++;
+                        alert("Correct Answer \nTotal: " + gameResult.total + "\nCorrect: " + gameResult.totalCorrect + "\nWrong: " + gameResult.totalWrong);
+                    } else {
+                        gameResult.totalWrong++;
+                        alert("Wrong Answer \nThe Correct Answer is " + correctAns + "\nTotal: " + gameResult.total + "\nCorrect: " + gameResult.totalCorrect + "\nWrong: " + gameResult.totalWrong);
+                    }
+
+                }
+            },
+            ExtraAddition: function() {
+                var random1_real = Math.floor((Math.random() * 10)) % 2;
+                var random1_img = Math.floor((Math.random() * 10)) % 2;
+                var random2_real = Math.floor((Math.random() * 10)) % 2;
+                var random2_img = Math.floor((Math.random() * 10)) % 2;
+                var correctAns_real = random1_real + random2_real;
+                var correctAns_img = random1_img + random2_img;
+                var correctAns;
+                correctAns = correctAns_real + "+" + correctAns_img + "i";
+                var result = prompt("(" + random1_real + "+" + random1_img + "i" + ")" + "+" + "(" + random2_real + "+" + random2_img + "i" + ")" + "=");
+                if (result != null && result != "") {
+                    gameResult.total++;
+                    if ((correctAns_real == 0) && (correctAns_img == 0) && (result.trim() == 0)) {
+                        gameResult.totalCorrect++;
+                        alert("Correct Answer \nTotal: " + gameResult.total + "\nCorrect: " + gameResult.totalCorrect + "\nWrong: " + gameResult.totalWrong);
+                    } else if ((correctAns_real != 0) && (correctAns_img == 0) && (result.trim() == correctAns_real)) {
+                        gameResult.totalCorrect++;
+                        alert("Correct answer \nTotal: " + gameResult.total + "\nCorrect: " + gameResult.totalCorrect + "\nWrong: " + gameResult.totalWrong);
+                    } else if ((correctAns_real == 0) && (correctAns_img != 0) && (result.trim() == correctAns_img + "i")) {
+                        gameResult.totalCorrect++;
+                        alert("Correct answer \nTotal: " + gameResult.total + "\nCorrect: " + gameResult.totalCorrect + "\nWrong: " + gameResult.totalWrong);
+                    } else if (correctAns == result.trim()) {
+                        gameResult.totalCorrect++;
+                        alert("Correct answer \nTotal: " + gameResult.total + "\nCorrect: " + gameResult.totalCorrect + "\nWrong: " + gameResult.totalWrong);
+                    } else {
+                        gameResult.totalWrong++;
+                        alert("Wrong Answer \nThe Correct Answer is " + correctAns + "\nTotal: " + gameResult.total + "\nCorrect: " + gameResult.totalCorrect + "\nWrong: " + gameResult.totalWrong);
+                    }
+                }
+
+            },
+            ExtraSubtraction: function() {
+                var random1_real = Math.floor((Math.random() * 10)) % 2;
+                var random1_img = Math.floor((Math.random() * 10)) % 2;
+                var random2_real = Math.floor((Math.random() * 10)) % 2;
+                var random2_img = Math.floor((Math.random() * 10)) % 2;
+                var correctAns_real = random1_real - random2_real;
+                var correctAns_img = random1_img - random2_img;
+                var correctAns;
+                if (correctAns_img < 0)
+                    correctAns = correctAns_real + "-" + (correctAns_img * -1) + "i";
+                else
+                    correctAns = correctAns_real + "+" + correctAns_img + "i";
+                var result = prompt("(" + random1_real + "+" + random1_img + "i" + ")" + "-" + "(" + random2_real + "+" + random2_img + "i" + ")" + "=");
+                if (result != null && result != "") {
+                    result = result.replace(/\+\-/g, '-');
+                    gameResult.total++;
+                    if ((correctAns_real == 0) && (correctAns_img == 0) && (result == 0)) {
+                        gameResult.totalCorrect++;
+                        alert("Correct Answer \nTotal: " + gameResult.total + "\nCorrect: " + gameResult.totalCorrect + "\nWrong: " + gameResult.totalWrong);
+                    } else if ((correctAns_real != 0) && (correctAns_img == 0) && (result == correctAns_real)) {
+                        gameResult.totalCorrect++;
+                        alert("Correct Answer \nTotal: " + gameResult.total + "\nCorrect: " + gameResult.totalCorrect + "\nWrong: " + gameResult.totalWrong);
+                    } else if ((correctAns_real == 0) && (correctAns_img != 0) && (result == correctAns_img + "i")) {
+                        gameResult.totalCorrect++;
+                        alert("Correct Answer \nTotal: " + gameResult.total + "\nCorrect: " + gameResult.totalCorrect + "\nWrong: " + gameResult.totalWrong);
+                    } else if (correctAns == result.trim()) {
+                        gameResult.totalCorrect++;
+                        alert("Correct Answer \nTotal: " + gameResult.total + "\nCorrect: " + gameResult.totalCorrect + "\nWrong: " + gameResult.totalWrong);
+                    } else {
+                        gameResult.totalWrong++;
+                        alert("Wrong Answer \n The Correct Answer is " + correctAns + "\nTotal: " + gameResult.total + "\nCorrect: " + gameResult.totalCorrect + "\nWrong: " + gameResult.totalWrong);
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
